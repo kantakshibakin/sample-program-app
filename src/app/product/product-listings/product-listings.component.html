@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="myclass">こんにちは！いらっしゃいませ。</div>
+  <br>
+  <div class="row">
+      <!-- <div class="col-sm" *ngFor="let product of products; index as i; first as isFirst"> -->
+    <div class="col-sm" *ngFor="let product of products; let productId=index">
+      <a [routerLink]="[productId]">
+<!-- <a [routerLink]="['/detail']"> /スラッシュがあると絶対パスになる-->
+        <div class="card">
+            <img src="{{ product.coverimage }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-title">{{ product.name }}</p>
+                <p class="card-text">{{ product.description }}<br><br>${{ product.price }}</p>
+                  <!-- <ul>
+                    <li>{{ product.name }}</li>
+                    <li>{{ product.price }}</li>
+                    <li>{{ product.description }}</li>
+                  </ul>
+                </p> -->
+            </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
